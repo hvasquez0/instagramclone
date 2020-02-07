@@ -1,3 +1,6 @@
 <%= image_tag @post.pic, class: "my-pic"%>
 <p><%=@post.caption %> </p>
-    
+<% if current_user == @post.user %>
+    <%= button_to "Delete", @post, method: :delete  %>
+    <%= button_to "Edit", "/post/#{@post.id}/edit", method: :get %>
+<%end%> 

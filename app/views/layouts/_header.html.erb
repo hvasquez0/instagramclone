@@ -1,0 +1,50 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Instagram Clone</h1>
+    <p class="lead">We tried to ame a clone of insta.</p>
+  </div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/posts">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/posts/new">New post</a>
+      <!--<li class="nav-item">-->
+      <!--  <a class="nav-link" href="/posts/new">New post</a>-->
+      <!--</li>-->
+      <!--<li class="nav-item dropdown">-->
+      <!--  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+      <!--    Dropdown-->
+      <!--  </a>-->
+      <!--  <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+      <!--    <a class="dropdown-item" href="#">Action</a>-->
+      <!--    <a class="dropdown-item" href="#">Another action</a>-->
+      <!--    <div class="dropdown-divider"></div>-->
+      <!--    <a class="dropdown-item" href="#">Something else here</a>-->
+      <!--  </div>-->
+      <!--</li>-->
+      <!--<li class="nav-item">-->
+      <!--  <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>-->
+      <!--</li>-->
+    </ul>
+      <p class="navbar-text float-right">
+    <% if user_signed_in? %>
+      Logged in as <strong><%= current_user.email %></strong>.
+      <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+    <% else %>
+      <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+      <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+    <% end %>
+<!--    </ul>-->
+<!--  </p>-->
+<!--    <form class="form-inline my-2 my-lg-0">-->
+<!--      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
+<!--      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
+<!--    </form>-->
+  </div>
+</nav>
